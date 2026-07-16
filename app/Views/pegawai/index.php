@@ -73,7 +73,10 @@
 
                         <td align="center">
 
-                            <button class="btn-edit">Update</button>
+                            <a href="<?= base_url('pegawai/edit/'.$p['id_pegawai']); ?>">
+    <button class="btn-update">Update</button>
+</a>
+
 
                             <button class="btn-delete">Delete</button>
 
