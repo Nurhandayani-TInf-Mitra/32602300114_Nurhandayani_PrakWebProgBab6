@@ -45,4 +45,29 @@ class Pegawai extends BaseController
 
         return redirect()->to('/pegawai');
     }
+//Edit Data Pegawai
+    public function edit($id)
+{
+    $data['pegawai'] = $this->pegawai->find($id);
+
+    return view('pegawai/edit', $data);
 }
+public function update()
+{
+    $id = $this->request->getPost('id_pegawai');
+
+    $data = [
+        'nama' => $this->request->getPost('nama'),
+        'nik' => $this->request->getPost('nik'),
+        'jabatan' => $this->request->getPost('jabatan'),
+        'alamat' => $this->request->getPost('alamat'),
+        'nomor_handphone' => $this->request->getPost('nomor_handphone'),
+        'email' => $this->request->getPost('email')
+    ];
+    
+    $this->pegawai->update($id, $data);
+
+    return redirect()->to('/pegawai');
+}
+
+    }
