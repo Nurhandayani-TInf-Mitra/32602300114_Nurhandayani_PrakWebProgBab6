@@ -10,3 +10,5 @@ $routes->get('/pegawai/tambah', 'Pegawai::tambah');
 $routes->post('/pegawai/simpan', 'Pegawai::simpan');
 $routes->get('/pegawai/edit/(:any)', 'Pegawai::edit/$1');
 $routes->post('/pegawai/update', 'Pegawai::update');
+
+$routes->get('/pegawai/delete/(:num)', 'Pegawai::delete/$1');
