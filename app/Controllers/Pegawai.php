@@ -70,4 +70,11 @@ public function update()
     return redirect()->to('/pegawai');
 }
 
-    }
+// Menghapus data pegawai
+public function delete($id) {
+    $this->pegawai->delete($id);
+
+    return redirect()->to(base_url('pegawai'));
+}
+
+}

@@ -21,14 +21,15 @@
         <h1>Data Pegawai</h1>
 
         <a href="<?= base_url('pegawai/tambah'); ?>">
-            <button class="btn-tambah">Tambah Pegawai</button>
+            <button type="button" class="btn-tambah">
+                Tambah Pegawai
+            </button>
         </a>
     </div>
 
-    <div class="table">
+    <table border="1" cellspacing="0">
 
-        <table border="1" width="100%" cellspacing="0" cellpadding="10">
-
+        <thead>
             <tr>
                 <th width="5%">No</th>
                 <th>Nama</th>
@@ -37,8 +38,11 @@
                 <th>Alamat</th>
                 <th>No HP</th>
                 <th>Email</th>
-                <th width="15%">Action</th>
+                <th width="18%">Action</th>
             </tr>
+        </thead>
+
+        <tbody>
 
             <?php if (empty($pegawai)) : ?>
 
@@ -59,26 +63,34 @@
 
                         <td align="center"><?= $no++; ?></td>
 
-                        <td><?= $p['nama']; ?></td>
+                        <td><?= esc($p['nama']); ?></td>
 
-                        <td><?= $p['nik']; ?></td>
+                        <td><?= esc($p['nik']); ?></td>
 
-                        <td><?= $p['jabatan']; ?></td>
+                        <td><?= esc($p['jabatan']); ?></td>
 
-                        <td><?= $p['alamat']; ?></td>
+                        <td><?= esc($p['alamat']); ?></td>
 
-                        <td><?= $p['nomor_handphone']; ?></td>
+                        <td><?= esc($p['nomor_handphone']); ?></td>
 
-                        <td><?= $p['email']; ?></td>
+                        <td><?= esc($p['email']); ?></td>
 
-                        <td align="center">
+                        <td>
 
-                            <a href="<?= base_url('pegawai/edit/'.$p['id_pegawai']); ?>">
-    <button class="btn-update">Update</button>
-</a>
+                            <a href="<?= base_url('pegawai/edit/' . $p['id_pegawai']); ?>">
+                                <button type="button" class="btn-update">
+                                    Update
+                                </button>
+                            </a>
 
+                            <a href="<?= base_url('pegawai/delete/' . $p['id_pegawai']); ?>"
+                               onclick="return confirm('Apakah Anda yakin ingin menghapus data pegawai ini?');">
 
-                            <button class="btn-delete">Delete</button>
+                                <button type="button" class="btn-delete">
+                                    Delete
+                                </button>
+
+                            </a>
 
                         </td>
 
@@ -88,9 +100,9 @@
 
             <?php endif; ?>
 
-        </table>
+        </tbody>
 
-    </div>
+    </table>
 
 </main>
 

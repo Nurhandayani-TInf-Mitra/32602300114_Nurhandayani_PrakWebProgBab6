@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Pegawai</title>
+
     <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
 </head>
 
@@ -13,70 +17,80 @@
 
 <main>
 
-<h1>Edit Data Pegawai</h1>
+    <h1>Edit Data Pegawai</h1>
 
-<form action="<?= base_url('pegawai/update'); ?>" method="post">
+    <div class="form">
 
-    <!-- id pegawai disembunyikan -->
-    <input type="hidden" name="id_pegawai" value="<?= $pegawai['id_pegawai']; ?>">
+        <form action="<?= base_url('pegawai/update'); ?>" method="post">
 
-    <div class="form-group">
-        <label>Nama</label>
-        <input
-            type="text"
-            name="nama"
-            value="<?= $pegawai['nama']; ?>"
-            required>
+            <input
+                type="hidden"
+                name="id_pegawai"
+                value="<?= $pegawai['id_pegawai']; ?>">
+
+            <div class="input">
+                <label>Nama</label>
+                <input
+                    type="text"
+                    name="nama"
+                    value="<?= $pegawai['nama']; ?>"
+                    required>
+            </div>
+
+            <div class="input">
+                <label>NIK</label>
+                <input
+                    type="text"
+                    name="nik"
+                    value="<?= $pegawai['nik']; ?>"
+                    required>
+            </div>
+
+            <div class="input">
+                <label>Jabatan</label>
+                <input
+                    type="text"
+                    name="jabatan"
+                    value="<?= $pegawai['jabatan']; ?>"
+                    required>
+            </div>
+
+            <div class="input">
+                <label>Alamat</label>
+                <input
+                    type="text"
+                    name="alamat"
+                    value="<?= $pegawai['alamat']; ?>"
+                    required>
+            </div>
+
+            <div class="input">
+                <label>No HP</label>
+                <input
+                    type="text"
+                    name="nomor_handphone"
+                    value="<?= $pegawai['nomor_handphone']; ?>"
+                    required>
+            </div>
+
+            <div class="input">
+                <label>Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    value="<?= $pegawai['email']; ?>"
+                    required>
+            </div>
+
+            <div class="button">
+                <button type="submit">
+                    Update Data
+                </button>
+            </div>
+
+        </form>
+
     </div>
-
-    <div class="form-group">
-        <label>NIK</label>
-        <input
-            type="text"
-            name="nik"
-            value="<?= $pegawai['nik']; ?>"
-            required>
-    </div>
-
-    <div class="form-group">
-        <label>Jabatan</label>
-        <input
-            type="text"
-            name="jabatan"
-            value="<?= $pegawai['jabatan']; ?>"
-            required>
-    </div>
-
-    <div class="form-group">
-        <label>Alamat</label>
-        <input
-            type="text"
-            name="alamat"
-            value="<?= $pegawai['alamat']; ?>"
-            required>
-    </div>
-
-    <div class="form-group">
-        <label>No HP</label>
-        <input
-            type="text"
-            name="nomor_handphone"
-            value="<?= $pegawai['nomor_handphone']; ?>"
-            required>
-    </div>
-
-    <div class="form-group">
-        <label>Email</label>
-        <input
-            type="email"
-            name="email"
-            value="<?= $pegawai['email']; ?>"
-            required>
-    </div>
-
-    <button type="submit">Update Data</button>
-
-</form>
 
 </main>
 
